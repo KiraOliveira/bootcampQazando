@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "cypress": "^12.11.0"
+  },
+  "name": "bootcampqazando",
+  "description": "Bootcamp Cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

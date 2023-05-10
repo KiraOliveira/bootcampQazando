@@ -1,0 +1,41 @@
+# nome da pipeline
+name: Tests basic Kira
+
+# em que momento séra executada
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  # o que vai ser feito nessa pipeline
+  # só teremos um job: rodar os testes
+  cypress-run:
+    # máquina que será executado
+    runs-on: ubuntu-latest
+
+  # passo a passo para rodar os testes
+  steps:
+    # clone do projeto
+    - name: Checkout/Clone do projeto
+      uses: actions/checkout@v3
+
+    # exemplo de execução no terminal
+    - name: Instalar dependencias do projeto
+      run: npm install
+
+    # execução e config do projeto
+    - name: Run testes
+      uses: cypress/io/github-actions@v5
+      with:
+        record: true
+      env: CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_KEY_KIRA }}
+      
+      GITHUB_TOKEN: ${{ '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' }}
+        
+
+    # upload do relatorio do mocha
+    - name: upload relatório
+      uses: actions/upload-artifact@v3
+      with:
+        name: Relatório
+        path: cypress/reports/html

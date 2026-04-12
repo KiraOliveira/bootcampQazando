@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "cypress": "^12.11.0"
+    "cypress": "^15.8.2"
   },
   "name": "bootcampqazando",
   "description": "Bootcamp Cypress",
